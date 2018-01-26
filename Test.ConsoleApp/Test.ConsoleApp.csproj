@@ -4,8 +4,8 @@
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net462</TargetFramework>
-    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">$(SolutionDir)StackExchange.Precompilation.Build\bin\$(Configuration)\net462\</SEPrecompilerPath>
+    <TargetFramework>net461</TargetFramework>
+    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">..\StackExchange.Precompilation.Build\bin\$(Configuration)\net461\</SEPrecompilerPath>
     <PathMap>$(SolutionDir)\=https://example.org/</PathMap>
     <DebugType>portable</DebugType>
   </PropertyGroup>

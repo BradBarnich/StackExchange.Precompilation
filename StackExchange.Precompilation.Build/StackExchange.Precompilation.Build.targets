@@ -30,6 +30,7 @@
             <CscToolExe>$(SEPrecompilerCscToolExe)</CscToolExe>
         </PropertyGroup>
         <ItemGroup>
+            <Compile Include="@(EmbeddedResource)" Condition="'$(SEPrecompilerIncludeRazor)' == 'true' and '%(Extension)' == '.cshtml'" />
             <Compile Include="@(Content)" Condition="'$(SEPrecompilerIncludeRazor)' == 'true' and '%(Extension)' == '.cshtml'" />
             <Compile Include="@(None)"    Condition="'$(SEPrecompilerIncludeRazor)' == 'true' and '%(Extension)' == '.cshtml'" />
         </ItemGroup>

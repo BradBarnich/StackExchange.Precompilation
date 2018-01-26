@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -10,6 +11,8 @@ namespace StackExchange.Precompilation
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.AssemblyResolve += AssemblyResolve;
+
             try
             {
                 if (!CompilationProxy.RunCs(args))
@@ -37,5 +40,15 @@ namespace StackExchange.Precompilation
             }
         }
 
+        private static Assembly AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            var name = new AssemblyName(args.Name);
+
+            // if we failed to resolve a simple name, nothing we can do
+            if (name.Name.Equals(name.FullName)) return null;
+
+            // drops the version information, effectively a binding redirect to whatever version is adjacent to the migrator dll.
+            return Assembly.Load(name.Name);
+        }
     }
 }

@@ -13,8 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Test.WebApp</RootNamespace>
     <AssemblyName>Test.WebApp</AssemblyName>
-    <TargetFramework>net462</TargetFramework>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +24,11 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>15.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +62,9 @@
     <Content Include="**\*.cshtml" Exclude="Views\Home\ExcludedLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Web" />
     <Reference Include="Microsoft.CSharp" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
@@ -77,15 +84,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-
   <PropertyGroup>
-    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">$(SolutionDir)StackExchange.Precompilation.Build\bin\$(Configuration)\net462\</SEPrecompilerPath>
+    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">..\StackExchange.Precompilation.Build\bin\$(Configuration)\net461</SEPrecompilerPath>
     <!-- Using DEBUG build configuration to test RoslynRazorViewEngine in VS, SECompilerPath is set in the build script  -->
     <SEPrecompilerIncludeRazor Condition="'$(Configuration)' == 'Release' or '(SECompilerPath)' != ''">true</SEPrecompilerIncludeRazor>
   </PropertyGroup>
   <Import Project="$(SolutionDir)StackExchange.Precompilation.Build\StackExchange.Precompilation.Build.targets" />
-
   <Target Name="Pack">
     <!-- this target is just a dummy to enable the pack target solution wide, since this is the only non-SDK project in the solution -->
   </Target>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v15.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>

@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Test.WebApp</RootNamespace>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
@@ -23,7 +23,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.6.1" />
   </ItemGroup>
   <PropertyGroup>
-    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">$(SolutionDir)StackExchange.Precompilation.Build\bin\$(Configuration)\$(TargetFramework)\</SEPrecompilerPath>
+    <SEPrecompilerPath Condition="'$(SEPrecompilerPath)' == ''">..\StackExchange.Precompilation.Build\bin\$(Configuration)\$(TargetFramework)\</SEPrecompilerPath>
     <!-- Always precompile -->
     <SEPrecompilerIncludeRazor>true</SEPrecompilerIncludeRazor>
   </PropertyGroup>

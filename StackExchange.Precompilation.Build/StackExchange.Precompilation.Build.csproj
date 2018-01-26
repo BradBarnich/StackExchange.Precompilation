@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <AssemblyName>StackExchange.Precompiler</AssemblyName>
     <Description>Replaces CSC and aspnet_compiler.exe with StackExchange.Precompiler for compiling C# (.cs) and Razor View (.cshtml) files in asp.net mvc 5 projects.</Description>
     <IsTool>true</IsTool>

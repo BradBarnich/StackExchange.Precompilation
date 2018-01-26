@@ -35,7 +35,7 @@ $defaultArgs = "/v:n", "/m", "/nologo",
     "/p:Version=$version",
     "/t:Restore,Build,Pack",
     "/p:Configuration=Release",
-    "/p:SEPrecompilerPath=$solutionDir\StackExchange.Precompilation.Build\bin\Release\net462"
+    "/p:SEPrecompilerPath=$solutionDir\StackExchange.Precompilation.Build\bin\Release\net461"
 if ($MsBuildArgs)
 {
     $defaultArgs += $MsBuildArgs
